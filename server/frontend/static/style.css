@@ -4,7 +4,9 @@ img{
 }
 
 .card{
-  border: rgb(103, 102, 105) 3px solid;
+  border: rgb(103, 102, 105) 1px solid !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1) !important;
   display: flex;  
   flex-direction: column;
   margin-left:5%;
@@ -123,4 +125,10 @@ img{
     border-radius:50px;
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
+}
+
+.about-image {
+    width: 200px;
+    height: 300px;
+    border-radius: 1.5rem !important;
 }
