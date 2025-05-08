@@ -24,15 +24,15 @@ const Dealer = () => {
   let reviews_url = root_url+`djangoapp/reviews/dealer/${id}`;
   let post_review = root_url+`postreview/${id}`;
   
-  const get_dealer = async ()=>{
-    const res = await fetch(dealer_url, {
-      method: "GET"
-    });
+  const get_dealer = async () => {
+    const res = await fetch(dealer_url, { method: "GET" });
     const retobj = await res.json();
-    
-    if(retobj.status === 200) {
-      let dealerobjs = Array.from(retobj.dealer)
-      setDealer(dealerobjs[0])
+    console.log("Dealer data response:", retobj);
+  
+    if (res.ok && retobj.dealer) {
+      setDealer(retobj.dealer); 
+    } else {
+      console.error("Unexpected dealer data format:", retobj);
     }
   }
 
@@ -41,8 +41,8 @@ const Dealer = () => {
       method: "GET"
     });
     const retobj = await res.json();
-    
-    if(retobj.status === 200) {
+    console.log("response:", retobj);
+    if(retobj.status == 200) {
       if(retobj.reviews.length > 0){
         setReviews(retobj.reviews)
       } else {
