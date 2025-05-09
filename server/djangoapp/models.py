@@ -28,6 +28,5 @@ class CarModel(models.Model):
             MinValueValidator(2015)
         ])
     # Other fields as needed
-    dealer_id = models.IntegerField()
     def __str__(self):
         return self.name  # Return the name as the string representation
